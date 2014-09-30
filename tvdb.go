@@ -161,9 +161,13 @@ func NewTvdbWithConfig(config TvdbConfig) *Tvdb {
 	return &Tvdb{config.ApiKey, config.Language}
 }
 
+func NewDefaultTvdbConfig() TvdbConfig {
+	return TvdbConfig{API_KEY, DEFAULT_LANGUAGE}
+}
+
 // Tvdb with default configuration
 func NewTvdb() *Tvdb {
-	return NewTvdbWithConfig(TvdbConfig{API_KEY, DEFAULT_LANGUAGE})
+	return NewTvdbWithConfig(NewDefaultTvdbConfig())
 }
 
 // Get more detail for all TV shows in a list.
